@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "*.conf": "ini",
+        "*.pug": "jade",
+        "cstddef": "cpp",
+        "stdexcept": "cpp"
+    },
+    "cSpell.enableFiletypes": [
+        "markdown"
+    ],
+    "cSpell.language": "en,eo"
+}

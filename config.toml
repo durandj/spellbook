@@ -1,0 +1,25 @@
+baseURL = 'https://spellbook.avalonian.dev/'
+languageCode = 'en-us'
+title = 'Spellbook'
+
+theme = "hugo-book"
+
+[params]
+    BookTheme = "dark"
+    BookRepo = "https://github.com/durandj/spellbook"
+    BookDateFormat = "2006-01-02"
+
+[languages]
+[languages.en]
+    languageName = "English"
+    contentDir = "content.en"
+    weight = 1
+
+[languages.eo]
+    languageName = "Esperanto"
+    contentDir = "content.eo"
+    weight = 2
+
+[markup]
+[markup.goldmark.renderer]
+    unsafe = true

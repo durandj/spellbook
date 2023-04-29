@@ -1,0 +1,32 @@
+version: "3"
+
+tasks:
+  build:
+    desc: Creates a build of the site
+
+    sources:
+      - ./archetypes/**
+      - ./assets/**
+      - ./content/**
+      - ./data/**
+      - ./layouts/**
+      - ./static/**
+      - ./themes/**
+
+    cmds:
+      - hugo
+
+  clean:
+    desc: Cleans up any artifacts from building
+
+    cmds:
+      - rm --recursive --force ./public ./resources
+
+  start:
+    desc: Runs a local development server
+    interactive: true
+    run: always
+    method: none
+
+    cmds:
+      - hugo server --buildDrafts {{ .CLI_ARGS }}

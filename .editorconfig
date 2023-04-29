@@ -1,0 +1,35 @@
+# top-most EditorConfig file
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+
+[*.{js,jsx,ts,tsx}]
+indent_style = tab
+indent_size = 4
+
+[*.{css,scss,sass,less}]
+indent_style = tab
+indent_size = 4
+
+[*.html]
+indent_style = tab
+indent_size = 4
+
+[*.json]
+indent_style = space
+indent_size = 2
+
+[.vscode/*.json]
+indent_style = space
+indent_size = 4
+
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+
+[*.{h,hpp,c,cpp}]
+indent_style = tab
+indent_size = 4

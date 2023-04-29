@@ -1,0 +1,16 @@
+- id: Search
+  translation: Serĉu
+
+- id: Edit this page
+  translation: Redaktu tiun retpaĝo
+
+# TODO: finish translations
+
+- id: Last modified by
+  translation: Last modified by
+
+- id: Expand
+  translation: Expand
+
+- id: bookSearchConfig
+  translation: '{ cache: true }'
