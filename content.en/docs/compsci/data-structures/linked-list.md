@@ -152,11 +152,70 @@ The downside to the doubly linked list is that there's some extra
 overhead involved with maintaining the extra connections going back
 up the list.
 
+{{< mermaid >}}
+stateDiagram-v2
+    direction LR
+
+    [*] --> node1
+    node1 --> node2
+    node2 --> node1
+    node2 --> node3
+    node3 --> node2
+    node3 --> [*]
+{{< /mermaid >}}
+
 ## Performance
+
+In the performance metrics below `n` is the length of the list as it
+tends towards `infinite`.
+
+### Singly linked list
+
+| Operation  | Big O |
+| ---------- | ----- |
+| Prepend    | O(1)  |
+| Append*    | O(1)  |
+| Insert     | O(n)  |
+| Read       | O(n)  |
+| Find first | O(n)  |
+| Find last  | O(n)  |
+| Update     | O(n)  |
+| Pop front  | O(1)  |
+| Pop back   | O(n)  |
+| Remove     | O(n)  |
+
+*Note*: There is an assumption being made here that the list is
+implemented in a way where it keeps track of the tail element. If not
+then the performance will be worse.
+
+### Doubly linked list
+
+| Operation  | Big O    |
+| ---------- | -------- |
+| Prepend    | O(1)     |
+| Append     | O(1)     |
+| Insert     | O(n / 2) |
+| Read       | O(n / 2) |
+| Find first | O(n)     |
+| Find last  | O(n)     |
+| Update     | O(n / 2) |
+| Pop front  | O(1)     |
+| Pop back   | O(1)     |
+| Remove     | O(n / 2) |
+
+*Note*: There is an assumption being made here that the list is
+implemented in a way where it keeps track of the tail element. If not
+then the performance will be worse.
 
 ## Related
 
-Trees
+### Trees
+
+A linked list (whether it's singly or doubly linked) is just a special
+case of a tree data structure. Unlike the generic tree data structure,
+a linked list can only have zero or one child elements while a
+standard tree can have any number of children (in practice it's
+usually only between zero and two children).
 
 {{< mermaid >}}
 stateDiagram-v2
@@ -167,5 +226,20 @@ stateDiagram-v2
     node2 --> [*]
 {{< /mermaid >}}
 
-Queues
-Stacks
+### Queues
+
+Linked lists can be a helpful way of implementing an unsorted queue
+data structure since it provides reasonably good time to push and pop
+elements as needed at the queue ends.
+
+If you need some kind of sorted queue a linked list may not be quite
+as helpful.
+
+### Stacks
+
+Linked lists can be a helpful way of implementing an unsorted stack
+data structure since it provides reasonably good time to push and pop
+elements as needed at the stack ends.
+
+If you need some kind of sorted stack a linked list may not be quite
+as helpful.
